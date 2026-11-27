@@ -17,8 +17,22 @@
  
 <body>
 <div class="page">
-	<div th:replace="~{profile-dropdown.html :: profile_dropdown}"></div>
 	<div th:replace="~{dashboard/nav-bar.html :: nav_bar}"></div>
+	<!-- Contenido -->
+	<div class="page-wrapper">
+		<!-- Banner -->
+		<div class="position-relative w-100"
+		     th:style="|background: url('@{/img/mi-espacio-fondo.png}') center bottom / cover no-repeat; height: 12rem; image-rendering: pixelated;|">
+			<div class="position-absolute top-0 end-0 m-3" style="z-index: 2;">
+				<div th:replace="~{profile-dropdown :: profile_dropdown}"></div>
+			</div>
+		</div>
+		<main class="page-body" >
+			<div class="container-xl">
+			<h1>ESTADISTICAS</h1>
+			</div>
+		</main>
+	</div>
 </div>
 </body>
 

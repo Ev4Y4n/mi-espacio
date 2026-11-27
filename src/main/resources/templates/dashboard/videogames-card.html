@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<body>
+	<div class="card bg-juegos" th:fragment="videogames-card">
+		<div class="card-body">
+			<div class="h1 mb-0" th:text="${totalJuegos} ?: 7">7</div>
+			<div>Juegos completados</div>
+		</div>
+	</div>
+</body>
+</html>

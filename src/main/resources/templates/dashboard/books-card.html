@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<body>
+	<div class="card bg-libros" th:fragment="books-card">
+		<div class="card-body">
+			<div class="h1 mb-0" th:text="${totalLibros} ?: 12">12</div>
+			<div>Libros leídos</div>
+		</div>
+	</div>
+</body>
+</html>

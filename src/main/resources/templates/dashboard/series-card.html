@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<body>
+	<div class="card bg-series" th:fragment="series-card">
+		<div class="card bg-series">
+			<div class="card-body">
+				<div class="h1 mb-0" th:text="${totalSeries} ?: 18">18</div>
+				<div>Series vistas</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

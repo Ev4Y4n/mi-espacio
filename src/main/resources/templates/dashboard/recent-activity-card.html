@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<body>
+	<div class="card h-100" th:fragment="recent-activity-card">
+		<div class="card-header">
+			<h3 class="card-title">Tu actividad reciente</h3>
+			<a th:href="@{/coleccion}" class="ms-auto">Ver todo</a>
+		</div>
+		<div class="card-body">
+			<div class="row g-3">
+				<!-- Repite con th:each="item : ${actividad}" -->
+				<div class="col-6 col-md-3">
+					<img class="portada mb-2" th:src="@{/img/portadas/principito.jpg}" alt="" />
+					<div class="text">El Principito</div>
+					<small class="text-secondary">Leído el 28/10</small>
+				</div>
+				<div class="col-6 col-md-3">
+					<img class="portada mb-2" th:src="@{/img/portadas/spirited-away.jpg}" alt="" />
+					<div>El viaje de Chihiro</div>
+					<small class="text-secondary">Vista el 26/10</small>
+				</div>
+				<div class="col-6 col-md-3">
+					<img class="portada mb-2" th:src="@{/img/portadas/stranger-things.jpg}" alt="" />
+					<div>Stranger Things</div>
+					<small class="text-secondary">En curso · S3 E4</small>
+				</div>
+				<div class="col-6 col-md-3">
+					<img class="portada mb-2" th:src="@{/img/portadas/stardew-valley.jpg}" alt="" />
+					<div>Stardew Valley</div>
+					<small class="text-secondary">Jugado el 20/10</small>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

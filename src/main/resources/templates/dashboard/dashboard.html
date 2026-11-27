@@ -21,142 +21,46 @@
 	<!-- Contenido -->
 	<div class="page-wrapper">
 		<!-- Banner -->
-	<div class="position-relative w-100"
-	     th:style="|background: url('@{/img/mi-espacio-fondo.png}') center bottom / cover no-repeat; height: 12rem; image-rendering: pixelated;|">
-		<div class="position-absolute top-0 end-0 m-3" style="z-index: 2;">
-			<div th:replace="~{profile-dropdown :: profile_dropdown}"></div>
+		<div class="position-relative w-100"
+		     th:style="|background: url('@{/img/mi-espacio-fondo.png}') center bottom / cover no-repeat; height: 12rem; image-rendering: pixelated;|">
+			<div class="position-absolute top-0 end-0 m-3" style="z-index: 2;">
+				<div th:replace="~{profile-dropdown :: profile_dropdown}"></div>
+			</div>
 		</div>
-	</div>
 		<main class="page-body" >
 			<div class="container-xl">
 				<div class="row row-cards">
 					<!-- Saludo + botones de añadir -->
 					<div class="col-12">
-						<div class="card">
-							<div class="card-body">
-								<div class="row align-items-center g-3">
-									<div class="col-12 col-lg-5">
-										<h2 class="mb-1">¡Hola, <span th:text="${usuario?.nombre} ?: 'Eva'">Eva</span>!</h2>
-										<div class="text-secondary">¿Qué quieres registrar hoy?</div>
-									</div>
-									<div class="col-12 col-lg-7">
-										<div class="row g-2">
-											<div class="col-6 col-md-3"><a th:href="@{/libros/nuevo}" class="btn w-100 bg-libros">Añadir libro</a></div>
-											<div class="col-6 col-md-3"><a th:href="@{/peliculas/nueva}" class="btn w-100 bg-peliculas">Añadir película</a></div>
-											<div class="col-6 col-md-3"><a th:href="@{/series/nueva}" class="btn w-100 bg-series">Añadir serie</a></div>
-											<div class="col-6 col-md-3"><a th:href="@{/juegos/nuevo}" class="btn w-100 bg-juegos">Añadir juego</a></div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+						<div th:replace="~{dashboard/add-new-card.html :: add-new-card}"></div>
 					</div>
 					<!-- 4 tarjetas de resumen -->
 					<div class="col-6 col-xl-3">
-						<div class="card bg-libros">
-							<div class="card-body">
-								<div class="h1 mb-0" th:text="${totalLibros} ?: 12">12</div>
-								<div>Libros leídos</div>
-							</div>
-						</div>
+						<div th:replace="~{dashboard/books-card.html :: books-card}"></div>
 					</div>
 					<div class="col-6 col-xl-3">
-						<div class="card bg-peliculas">
-							<div class="card-body">
-								<div class="h1 mb-0" th:text="${totalPeliculas} ?: 25">25</div>
-								<div>Películas vistas</div>
-							</div>
-						</div>
+						<div th:replace="~{dashboard/movies-card.html :: movies-card}"></div>
 					</div>
 					<div class="col-6 col-xl-3">
-						<div class="card bg-series">
-							<div class="card-body">
-								<div class="h1 mb-0" th:text="${totalSeries} ?: 18">18</div>
-								<div>Series vistas</div>
-							</div>
-						</div>
+						<div th:replace="~{dashboard/series-card.html :: series-card}"></div>
 					</div>
 					<div class="col-6 col-xl-3">
-						<div class="card bg-juegos">
-							<div class="card-body">
-								<div class="h1 mb-0" th:text="${totalJuegos} ?: 7">7</div>
-								<div>Juegos completados</div>
-							</div>
-						</div>
+						<div th:replace="~{dashboard/videogames-card.html :: videogames-card}"></div>
 					</div>
 					<!-- Actividad reciente (2/3) -->
 					<div class="col-12 col-xl-8">
-						<div class="card h-100">
-							<div class="card-header">
-								<h3 class="card-title">Tu actividad reciente</h3>
-								<a th:href="@{/coleccion}" class="ms-auto">Ver todo</a>
-							</div>
-							<div class="card-body">
-								<div class="row g-3">
-									<!-- Repite con th:each="item : ${actividad}" -->
-									<div class="col-6 col-md-3">
-										<img class="portada mb-2" th:src="@{/img/portadas/principito.jpg}" alt="" />
-										<div class="text">El Principito</div>
-										<small class="text-secondary">Leído el 28/10</small>
-									</div>
-									<div class="col-6 col-md-3">
-										<img class="portada mb-2" th:src="@{/img/portadas/spirited-away.jpg}" alt="" />
-										<div>El viaje de Chihiro</div>
-										<small class="text-secondary">Vista el 26/10</small>
-									</div>
-									<div class="col-6 col-md-3">
-										<img class="portada mb-2" th:src="@{/img/portadas/stranger-things.jpg}" alt="" />
-										<div>Stranger Things</div>
-										<small class="text-secondary">En curso · S3 E4</small>
-									</div>
-									<div class="col-6 col-md-3">
-										<img class="portada mb-2" th:src="@{/img/portadas/stardew-valley.jpg}" alt="" />
-										<div>Stardew Valley</div>
-										<small class="text-secondary">Jugado el 20/10</small>
-									</div>
-								</div>
-							</div>
-						</div>
+						<div th:replace="~{dashboard/recent-activity-card.html :: recent-activity-card}"></div>
 					</div>
 					<!-- Columna derecha (1/3) -->
 					<div class="col-12 col-xl-4">
 						<div class="row row-cards">
-
 							<!-- Progreso del mes -->
 							<div class="col-12">
-								<div class="card">
-									<div class="card-header">
-										<h3 class="card-title">Tu progreso este mes</h3>
-										<a th:href="@{/statistics}" class="ms-auto">Ver estadísticas</a>
-									</div>
-									<div class="card-body">
-										<div class="mb-3">
-											<div class="d-flex justify-content-between"><span>Libros</span><span>75%</span></div>
-											<div class="progress"><div class="progress-bar" style="width: 75%; background: #8b6fd6" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div></div>
-										</div>
-										<div class="mb-3">
-											<div class="d-flex justify-content-between"><span>Películas</span><span>62%</span></div>
-											<div class="progress"><div class="progress-bar" style="width: 62%; background: #f0a070" role="progressbar" aria-valuenow="62" aria-valuemin="0" aria-valuemax="100"></div></div>
-										</div>
-										<div class="mb-3">
-											<div class="d-flex justify-content-between"><span>Series</span><span>80%</span></div>
-											<div class="progress"><div class="progress-bar" style="width: 80%; background: #5fb88a" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div></div>
-										</div>
-										<div>
-											<div class="d-flex justify-content-between"><span>Juegos</span><span>50%</span></div>
-											<div class="progress"><div class="progress-bar" style="width: 50%; background: #6c93e6" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div></div>
-										</div>
-									</div>
-								</div>
+								<div th:replace="~{dashboard/month-progress-card.html :: month-progress-card}"></div>
 							</div>
 							<!-- Tarjeta decorativa -->
 							<div class="col-12">
-								<div class="card bg-libros">
-									<div class="card-body d-flex align-items-center gap-3">
-										<img th:src="@{/img/gato-durmiendo.png}" alt="" width="64" />
-										<em>“Un mundo de historias espera por ti…”</em>
-									</div>
-								</div>
+								<div th:replace="~{dashboard/message-card.html :: message-card}"></div>
 							</div>
 						</div>
 					</div>
