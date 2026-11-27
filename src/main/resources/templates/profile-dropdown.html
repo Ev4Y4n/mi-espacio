@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<div class="dropdown d-flex justify-content-end mt-3 me-3" th:fragment="profile_dropdown">
+	<a href="#" class="nav-link d-flex lh-1 p-0 px-2" data-bs-toggle="dropdown" aria-label="Abrir menú de perfil">
+		<span class="avatar" th:text="${usuario?.iniciales} ?: 'EA'">EA</span>
+	</a>
+	<div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow" data-bs-theme="dark">
+		<span class="dropdown-header" th:text="${usuario?.nombre} ?: 'Eva'">Eva</span>
+		<a class="dropdown-item" th:href="@{/perfil}"><i class="ti ti-settings me-2"></i><span th:text="'Ajustes'">Ajustes</span></a>
+		<a class="dropdown-item" th:href="@{/logout}"><i class="ti ti-logout-2 me-2"></i><span th:text="'Cerrar sesión'">Cerrar sesión</span></a>
+	</div>
+</div>
+</body>
+</html>

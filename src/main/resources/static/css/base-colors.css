@@ -1,0 +1,22 @@
+:root {
+	
+	/* font */
+	--font-body: "Geist Pixel", system-ui, sans-serif;
+	--font-title: "Geist Pixel", system-ui, sans-serif;
+	/* backgrounds */
+	--bg: #fbf1f1;
+	--sidebar: #4a3a7a;
+	--accent: #8b6fd6;
+
+	/* categories (cards and buttons) */
+	--libros: #e3d9fa;
+	--peliculas: #fde1cf;
+	--series: #d3efe0;
+	--juegos: #d6e2fb;
+
+	/* categories (progress bar) */
+	--libros-fuerte: #8b6fd6;
+	--peliculas-fuerte: #f0a070;
+	--series-fuerte: #5fb88a;
+	--juegos-fuerte: #6c93e6;
+}

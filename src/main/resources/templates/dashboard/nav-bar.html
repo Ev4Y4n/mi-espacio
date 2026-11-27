@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<aside class="navbar navbar-vertical navbar-expand-lg sidebar-mi-espacio" th:fragment="nav_bar">
+	<div class="sidebar-inner d-flex flex-column w-100">
+
+		<div class="container-fluid justify-content-center">
+			<img th:src="@{/img/mi-espacio-logo.png}" alt="Mi Espacio" class="d-block w-100" />
+			<h1 class="navbar-brand navbar-brand-autodark d-flex justify-content-center m-0 py-3">
+				<a th:href="@{/welcome}" class="text-white text-decoration-none">Mi Espacio</a>
+			</h1>
+		</div>
+
+		<div class="container-fluid">
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebar-menu" aria-controls="sidebar-menu" aria-expanded="false" aria-label="Abrir menú">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="sidebar-menu">
+				<ul class="navbar-nav pt-lg-3">
+					<li class="nav-item"><a class="nav-link active" th:href="@{/welcome}"><i class="ti ti-home me-2"></i><span class="nav-link-title">Inicio</span></a></li>
+					<li class="nav-item"><a class="nav-link" th:href="@{/collections}"><i class="ti ti-books me-2"></i><span class="nav-link-title">Mi colección</span></a></li>
+					<li class="nav-item"><a class="nav-link" th:href="@{/favorites}"><i class="ti ti-heart me-2"></i><span class="nav-link-title">Favoritos</span></a></li>
+					<li class="nav-item"><a class="nav-link" th:href="@{/statistics}"><i class="ti ti-chart-bar-popular me-2"></i><span class="nav-link-title">Estadísticas</span></a></li>
+				</ul>
+			</div>
+		</div>
+
+		<img th:src="@{/img/mi-espacio-libreria.png}" alt="" class="d-none d-lg-block w-100 img-fluid mt-auto" />
+	</div>
+</aside>
+
+</body>
+</html>

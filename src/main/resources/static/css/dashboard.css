@@ -1,0 +1,59 @@
+/* ---------- Base ---------- */
+body {
+	font-family: var(--font-body);
+	background: var(--bg);
+}
+
+h1, h2, h3, h4, .card-title, .navbar-brand {
+	font-family: var(--font-title);
+	font-weight: 400; 
+}
+
+.h1, .h2, .h3 {
+	font-weight: 400;
+}
+
+/* ---------- Barra lateral ---------- */
+.sidebar-mi-espacio {
+	background: var(--sidebar);
+}
+
+.navbar-vertical.sidebar-mi-espacio .navbar-nav .nav-link,
+.navbar-vertical.sidebar-mi-espacio .navbar-nav .nav-link .nav-link-title,
+.navbar-vertical.sidebar-mi-espacio .navbar-nav .nav-link .nav-link-icon {
+	color: #fff;
+	opacity: 1;
+}
+
+.navbar-vertical.sidebar-mi-espacio .navbar-nav .nav-link {
+	border-radius: .75rem;
+}
+
+.navbar-vertical.sidebar-mi-espacio .navbar-nav .nav-link.active,
+.navbar-vertical.sidebar-mi-espacio .navbar-nav .nav-link:hover {
+	background: var(--accent);
+	color: #fff;
+}
+
+@media (min-width: 992px) {
+	.sidebar-inner { min-height: 100vh; }
+}
+
+/* ---------- Cards ---------- */
+.card {
+	border-radius: 1rem;
+}
+
+.bg-libros { background: var(--libros); }
+.bg-peliculas { background: var(--peliculas); }
+.bg-series { background: var(--series); }
+.bg-juegos { background: var(--juegos); }
+
+/* ---------- Cover ---------- */
+.portada {
+	aspect-ratio: 2 / 3;
+	object-fit: cover;
+	border-radius: .5rem;
+	width: 100%;
+}
+
